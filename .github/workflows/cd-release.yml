@@ -7,3 +7,9 @@ on:
       - "app/**"
       - "design-system/**"
       - ".github/workflows/cd-release.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+      - name: ECHO Building
+        run: echo building...
