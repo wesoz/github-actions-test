@@ -1,0 +1,9 @@
+name: CD - Relase
+
+on:
+  push:
+    - 'release/v*'
+  paths:
+      - "app/**"
+      - "design-system/**"
+      - ".github/workflows/cd-release.yml"
