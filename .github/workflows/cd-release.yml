@@ -2,11 +2,12 @@ name: CD - Relase
 
 on:
   push:
-    - 'release/v*'
-  paths:
-      - "app/**"
-      - "design-system/**"
-      - ".github/workflows/cd-release.yml"
+    branches:
+      - 'release/v*'
+    paths:
+        - "app/**"
+        - "design-system/**"
+        - ".github/workflows/cd-release.yml"
 
 jobs:
   build:
