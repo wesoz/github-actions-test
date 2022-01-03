@@ -9,12 +9,9 @@ on:
         - "design-system/**"
         - ".github/workflows/cd-release.yml"
   pull_request:
+    types: [opened]
     branches:
       - 'release/v*'
-    paths:
-        - "app/**"
-        - "design-system/**"
-        - ".github/workflows/cd-release.yml"
 
 jobs:
   build:
