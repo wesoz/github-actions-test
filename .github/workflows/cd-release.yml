@@ -1,9 +1,16 @@
 name: CD - Relase
 
 on:
-  pull_request:
+  push:
     branches:
       - 'release/v*'
+    paths:
+      - "app/**"
+      - "design-system/**"
+      - ".github/workflows/cd-release.yml"
+  pull_request:
+    types: [opened]
+    branches:
       - 'main'
 
 jobs:
