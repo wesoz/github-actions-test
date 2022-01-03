@@ -8,11 +8,16 @@ on:
       - "app/**"
       - "design-system/**"
       - ".github/workflows/cd-release.yml"
-  pull_request:
-    types: [opened]
+  push:
+    types: [created]
     branches:
-      - 'main'
-      - '!hotfix/*'
+      - 'release/v*'
+    
+  # pull_request:
+  #   types: [opened]
+  #   branches:
+  #     - 'main'
+  #     - '!hotfix/*'
 
 jobs:
   build:
