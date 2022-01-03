@@ -9,7 +9,6 @@ on:
         - "design-system/**"
         - ".github/workflows/cd-release.yml"
   pull_request:
-    types: [opened]
     branches:
       - 'release/v*'
 
