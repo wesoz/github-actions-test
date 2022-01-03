@@ -12,8 +12,7 @@ on:
     types: [opened]
     branches:
       - 'main'
-    branches-ignore:
-      - 'hotfix/*'
+      - '!hotfix/*'
 
 jobs:
   build:
