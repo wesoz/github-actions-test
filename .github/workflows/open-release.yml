@@ -15,8 +15,12 @@ jobs:
       - name: ECHO Building
         run: echo building...
       - name: Create Branch
-        run: |
-          git checkout develop
-          git pull
-          git checkout -b ${{ github.event.inputs.branchName }}
-          git push --set-upstream origin ${{ github.event.inputs.branchName }}
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        #env:
+        #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: ${{ github.event.inputs.branchName }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: ${{ github.event.inputs.branchName }}
