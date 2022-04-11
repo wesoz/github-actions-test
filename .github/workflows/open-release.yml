@@ -1,0 +1,22 @@
+name: Open - Relase
+
+on:
+  workflow_dispatch:
+    inputs:
+      branchName:
+          description: 'Branch Name'     
+          required: true
+          default: 'release/v2.x'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ECHO Building
+        run: echo building...
+      - name: Create Branch
+        run: |
+          git checkout develop
+          git pull
+          git checkout -b ${{ github.event.inputs.branchName }}
+          git push --set-upstream origin ${{ github.event.inputs.branchName }}
