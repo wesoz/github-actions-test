@@ -5,9 +5,13 @@ on:
     branches:
       - 'release/v*'
     paths:
-        - "app/**"
-        - "design-system/**"
-        - ".github/workflows/cd-release.yml"
+      - "app/**"
+      - "design-system/**"
+      - ".github/workflows/cd-release.yml"
+  pull_request:
+    types: [opened]
+    branches:
+      - 'main'
 
 jobs:
   build:
