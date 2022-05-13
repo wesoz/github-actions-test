@@ -22,5 +22,7 @@ jobs:
           branch: ${{ github.event.inputs.branchName }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           branch: ${{ github.event.inputs.branchName }}
