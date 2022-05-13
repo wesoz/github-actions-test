@@ -34,5 +34,6 @@ jobs:
         with:
           tag: ${{ github.event.inputs.releaseName }}
           name: ${{ github.event.inputs.releaseName }}
+          release_branches: 'main'
           #body: ${{ steps.tag_version.outputs.changelog }}
           generateReleaseNotes: true
