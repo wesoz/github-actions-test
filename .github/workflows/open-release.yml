@@ -14,8 +14,11 @@ jobs:
     steps:
       - name: Checkout develop
         uses: actions/checkout@v3
-        with:
-          ref: 'develop'
+      - name: Check Branch
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "A release não pode ser gerada a partir da main"
+          exit 1
       - name: Create Milestone
         uses: WyriHaximus/github-action-create-milestone@v1.1.0
         with:
