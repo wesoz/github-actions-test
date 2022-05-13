@@ -12,16 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main
-        uses: actions/checkout@v3
-        with:
-          ref: 'main'
       - name: Checkout develop
         uses: actions/checkout@v3
         with:
           ref: 'develop'
-      - name: Display branches
-        run: git branch
       # - name: Testa branch
       #   run: |
       #     git branch
@@ -35,10 +29,10 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           branch: ${{ github.event.inputs.branchName }}
-      - name: pull-request
+      - name: Create Pull-Request
         uses: repo-sync/pull-request@v2
         with:
-          destination_branch: "main"
+          destination_branch: 'main'
           pr_title: ${{ github.event.inputs.branchName }}
           pr_body: |
             PR auto gerado
