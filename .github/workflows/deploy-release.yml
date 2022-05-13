@@ -28,4 +28,5 @@ jobs:
         with:
           generateReleaseNotes: true
           tag: ${{ github.event.inputs.releaseName }}
+          target_commitish: 'main'
           token: ${{ github.token }}
