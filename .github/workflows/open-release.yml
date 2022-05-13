@@ -33,7 +33,7 @@ jobs:
             PR auto gerado
             ${{ github.event.inputs.branchName }}
           pr_allow_empty: true
-          pr_milestone: ${{ github.event.inputs.branchName }}
+          # pr_milestone: ${{ github.event.inputs.branchName }}
   imprime-infos:
     uses: ./.github/workflows/simple.yml
     needs: [abre-nova-release]
