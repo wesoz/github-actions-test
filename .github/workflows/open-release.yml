@@ -1,10 +1,10 @@
-name: Open - Relase
+name: Abrir Relase
 
 on:
   workflow_dispatch:
     inputs:
       branchName:
-          description: 'Branch Name'     
+          description: 'Nome da Branch de Release'     
           required: true
           default: 'release/v2.x'
 
@@ -25,6 +25,7 @@ jobs:
       - name: Create Pull-Request
         uses: repo-sync/pull-request@v2
         with:
+          source_branch: ${{ github.event.inputs.branchName }}
           destination_branch: 'main'
           pr_title: ${{ github.event.inputs.branchName }}
           pr_body: |
