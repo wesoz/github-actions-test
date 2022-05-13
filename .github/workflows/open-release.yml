@@ -28,14 +28,14 @@ jobs:
       #     GITHUB_TOKEN: ${{ github.token }}
       #   with:
       #     branch: ${{ github.event.inputs.branchName }}
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          branch: ${{ github.event.inputs.branchName }}
-          base: 'main'
-          title: ${{ github.event.inputs.branchName }}
-          body: |
-            PR auto gerado
-            ${{ github.event.inputs.branchName }}
+      # - name: Create Pull Request
+      #   uses: peter-evans/create-pull-request@v4
+      #   env:
+      #     GITHUB_TOKEN: ${{ github.token }}
+      #   with:
+      #     branch: ${{ github.event.inputs.branchName }}
+      #     base: 'main'
+      #     title: ${{ github.event.inputs.branchName }}
+      #     body: |
+      #       PR auto gerado
+      #       ${{ github.event.inputs.branchName }}
