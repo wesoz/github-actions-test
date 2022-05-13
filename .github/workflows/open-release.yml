@@ -12,10 +12,10 @@ jobs:
   abre-nova-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout develop
-        uses: actions/checkout@v3
-        with:
-          ref: 'develop'
+      # - name: Checkout develop
+      #   uses: actions/checkout@v3
+      #   with:
+      #     ref: 'develop'
       - name: Create Branch
         uses: peterjgrainger/action-create-branch@v2.0.1
         env:
