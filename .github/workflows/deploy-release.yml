@@ -29,5 +29,6 @@ jobs:
           release_branch: 'main'
           tag: ${{ github.event.inputs.releaseName }}
           name: ${{ github.event.inputs.releaseName }}
+          github_token: ${{ github.token }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
