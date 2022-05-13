@@ -1,4 +1,4 @@
-name: Abrir Relase
+name: Abrir Nova Relase
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
           default: 'release/v2.x'
 
 jobs:
-  build:
+  abre-nova-release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout develop
@@ -32,3 +32,7 @@ jobs:
             PR auto gerado
             ${{ github.event.inputs.branchName }}
           github_token: ${{ github.token }}
+      - name: Imprime Infos(Simple)
+        uses: wesoz/github-actions-test/.github/workflows/simple@main
+        with:
+          branchName: ${{ github.event.inputs.branchName }}

@@ -1,6 +1,11 @@
 name: Shell Commands
 
-on: [push]
+on: 
+  workflow_call:
+    inputs:
+      releaseName:
+        required: true
+        type: string
 
 jobs:
   run-shell-command:
@@ -10,6 +15,7 @@ jobs:
         run: echo "Hello World"
       - name: Multiline Script
         run: |
+          echo ${{ inputs.releaseName }}
           node -v
           npm -v
       - name: Python Command

@@ -1,6 +1,6 @@
 name: Actions Workflow
 
-on: [push]
+on: [workflow_call]
 
 jobs:
   run-github-actions:
