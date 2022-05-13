@@ -32,7 +32,9 @@ jobs:
             PR auto gerado
             ${{ github.event.inputs.branchName }}
           github_token: ${{ github.token }}
-      - name: Imprime Infos(Simple)
-        uses: wesoz/github-actions-test/.github/workflows/simple@main
-        with:
-          branchName: ${{ github.event.inputs.branchName }}
+  imprime-infos:
+    uses: wesoz/github-actions-test/.github/workflows/simple.yml@main
+    needs: [abre-nova-release]
+    with:
+      branchName: ${{ github.event.inputs.branchName }}
+    
