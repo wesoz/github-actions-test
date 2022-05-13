@@ -1,0 +1,28 @@
+name: Open - Relase
+
+on:
+  workflow_dispatch:
+    inputs:
+      branchName:
+          description: 'Branch Name'     
+          required: true
+          default: 'release/v2.x'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ECHO Building
+        run: echo building...
+      - name: Create Branch
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          branch: ${{ github.event.inputs.branchName }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          branch: ${{ github.event.inputs.branchName }}
