@@ -23,20 +23,9 @@ jobs:
         run: |
           echo "A release deve ser gerada a partir da main"
           exit 1
-      - name: Get main commit
-        run: echo "$commit_sha=git log --format=\"%H\" -n 1"
-      - name: Bump version and push tag
-        id: tag_version
-        uses: mathieudutour/github-tag-action@v6.0
-        with:
-          custom_tag: ${{ github.event.inputs.releaseName }}
-          #commit_sha: $commit_sha
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create a GitHub release
+      - name: Create Release Tag
         uses: ncipollo/release-action@v1
         with:
-          tag: ${{ github.event.inputs.releaseName }}
-          name: ${{ github.event.inputs.releaseName }}
-          #release_branches: 'main'
-          #body: ${{ steps.tag_version.outputs.changelog }}
           generateReleaseNotes: true
+          tag: ${{ github.event.inputs.releaseName }}
+          token: ${{ github.token }}
