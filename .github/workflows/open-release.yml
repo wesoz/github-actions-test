@@ -28,3 +28,8 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           branch: ${{ github.event.inputs.branchName }}
+          base: 'main'
+          title: ${{ github.event.inputs.branchName }}
+          body: |
+            PR auto gerado
+            ${{ github.event.inputs.branchName }}
