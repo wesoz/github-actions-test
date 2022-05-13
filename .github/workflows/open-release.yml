@@ -20,7 +20,8 @@ jobs:
         uses: WyriHaximus/github-action-create-milestone@v1.1.0
         with:
           title: ${{ github.event.inputs.releaseBranchName }}
-          github_token: ${{ github.token }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - name: Create Branch
         uses: peterjgrainger/action-create-branch@v2.0.1
         env:
