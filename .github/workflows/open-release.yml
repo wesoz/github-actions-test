@@ -12,8 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: ECHO Building
-        run: echo building...
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: 'develop'
       - name: Create Branch
         uses: peterjgrainger/action-create-branch@v2.0.1
         env:
