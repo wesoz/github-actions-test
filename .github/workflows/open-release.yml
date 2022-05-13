@@ -12,6 +12,10 @@ jobs:
   abre-nova-release:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout develop
+        uses: actions/checkout@v3
+        with:
+          ref: 'develop'
       - name: Create Branch
         uses: peterjgrainger/action-create-branch@v2.0.1
         env:
@@ -21,13 +25,15 @@ jobs:
       - name: Create Pull-Request
         uses: repo-sync/pull-request@v2
         with:
+          github_token: ${{ github.token }}
           source_branch: ${{ github.event.inputs.branchName }}
           destination_branch: 'main'
           pr_title: ${{ github.event.inputs.branchName }}
           pr_body: |
             PR auto gerado
             ${{ github.event.inputs.branchName }}
-          github_token: ${{ github.token }}
+          pr_allow_empty: true
+          pr_milestone: ${{ github.event.inputs.branchName }}
   imprime-infos:
     uses: ./.github/workflows/simple.yml
     needs: [abre-nova-release]
