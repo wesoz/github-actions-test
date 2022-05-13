@@ -19,6 +19,7 @@ jobs:
       - name: Testa branch
         run: |
           git branch
+          git pull
           git checkout -b ${{ github.event.inputs.branchName }}
           git branch
           git push --set-upstream origin ${{ github.event.inputs.branchName }}
