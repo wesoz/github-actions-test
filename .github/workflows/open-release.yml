@@ -36,5 +36,5 @@ jobs:
     uses: wesoz/github-actions-test/.github/workflows/simple.yml@main
     needs: [abre-nova-release]
     with:
-      branchName: ${{ github.event.inputs.branchName }}
+      releaseName: ${{ github.event.inputs.branchName }}
     
