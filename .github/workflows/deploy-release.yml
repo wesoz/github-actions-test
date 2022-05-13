@@ -32,18 +32,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.tag_version.outputs.new_tag }}
-          name: Release ${{ steps.tag_version.outputs.new_tag }}
-          body: ${{ steps.tag_version.outputs.changelog }}
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ steps.tag_version.outputs.new_tag }}
           name: ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.tag_version.outputs.changelog }}
-        # with:
-        #   release_branch: 'main'
-        #   tag: ${{ github.event.inputs.releaseName }}
-        #   name: ${{ github.event.inputs.releaseName }}
-        #   github_token: ${{ github.token }}
-        # env:
-        #   GITHUB_TOKEN: ${{ github.token }}
