@@ -33,7 +33,7 @@ jobs:
             ${{ github.event.inputs.branchName }}
           github_token: ${{ github.token }}
   imprime-infos:
-    uses: wesoz/github-actions-test/.github/workflows/simple.yml@main
+    uses: ./.github/workflows/simple.yml
     needs: [abre-nova-release]
     with:
       releaseName: ${{ github.event.inputs.branchName }}
