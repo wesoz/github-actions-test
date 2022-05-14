@@ -17,7 +17,8 @@ jobs:
       - name: Check Release Branch Name
         if: ${{ github.event.inputs.releaseBranchName }} == 'release/v2.x'
         run: |
-          echo "É necessário informar o nome da branch de release!"
+          echo Branch ${{ github.event.inputs.releaseBranchName }} inválida
+          echo É necessário informar o nome da branch de release!
           exit 1
       - name: Check Branch
         if: github.ref == 'refs/heads/main'
