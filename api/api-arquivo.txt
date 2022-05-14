@@ -4,3 +4,4 @@ nova linha na api
 
 mudança feita na release/v2.12.0
 
+segunda mudança feita na release/v2.12.0!
