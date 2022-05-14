@@ -7,3 +7,5 @@ alterei quatro vezes
 agora vai dar certo!
 
 MASTER MASTER
+
+mudança feita na release/v2.12.0 para o app
