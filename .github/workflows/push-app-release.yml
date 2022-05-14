@@ -6,8 +6,8 @@ on:
       - 'release/v*'
     paths:
       - "app/**"
-      - ".github/workflows/release-push-app.yml"
+      - ".github/workflows/push-app-release.yml"
 
 jobs:
   publish-release-app:
-    uses: ./.github/workflows/publish-release-app.yml
+    uses: ./.github/workflows/publica-app-staging.yml
