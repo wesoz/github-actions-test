@@ -44,8 +44,8 @@ jobs:
           pr_milestone: ${{ github.event.inputs.releaseBranchName }}
           github_token: ${{ github.token }}
   deploy-api:
-    uses: ./.github/workflows/publish-release-api.yml
+    uses: ./.github/workflows/publica-api-staging.yml
     needs: [abre-nova-release]
   deploy-app:
-    uses: ./.github/workflows/publish-release-app.yml
+    uses: ./.github/workflows/publica-app-staging.yml
     needs: [abre-nova-release]
