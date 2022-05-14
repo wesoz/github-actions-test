@@ -1,0 +1,12 @@
+name: Publish Release APP
+
+on: [workflow_call]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy App Staging
+        run: echo Deploying App...
+      - name: Done
+        run: echo App Done!

@@ -43,9 +43,9 @@ jobs:
           pr_allow_empty: true
           pr_milestone: ${{ github.event.inputs.releaseBranchName }}
           github_token: ${{ github.token }}
-  imprime-infos:
-    uses: ./.github/workflows/simple.yml
+  deploy-api:
+    uses: ./.github/workflows/publish-release-api.yml
     needs: [abre-nova-release]
-    with:
-      releaseName: ${{ github.event.inputs.releaseBranchName }}
-    
+  deploy-app:
+    uses: ./.github/workflows/publish-release-app.yml
+    needs: [abre-nova-release]

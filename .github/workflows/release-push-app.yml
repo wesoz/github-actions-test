@@ -1,0 +1,13 @@
+name: Release Push APP
+
+on:
+  push:
+    branches:
+      - 'release/v*'
+    paths:
+      - "app/**"
+      - ".github/workflows/release-push-app.yml"
+
+jobs:
+  publish-release-app:
+    uses: ./.github/workflows/publish-release-app.yml

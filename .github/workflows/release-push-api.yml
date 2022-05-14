@@ -1,0 +1,13 @@
+name: Release Push API
+
+on:
+  push:
+    branches:
+      - 'release/v*'
+    paths:
+      - "api/**"
+      - ".github/workflows/release-push-api.yml"
+
+jobs:
+  publish-release-api:
+    uses: ./.github/workflows/publish-release-api.yml
