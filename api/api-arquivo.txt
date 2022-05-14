@@ -2,4 +2,5 @@ novo arquivo api-arquivo
 
 nova linha na api
 
-estou na master apenas
+mudança feita na release/v2.12.0
+
