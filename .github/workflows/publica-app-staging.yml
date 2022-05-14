@@ -1,4 +1,4 @@
-name: Publish Release APP
+name: Publica App em Staging
 
 on: [workflow_call]
 

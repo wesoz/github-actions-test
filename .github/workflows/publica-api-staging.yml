@@ -1,4 +1,4 @@
-name: Publish Release API
+name: Publica API em Staging
 
 on: [workflow_call]
 

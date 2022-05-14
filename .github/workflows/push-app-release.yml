@@ -1,4 +1,4 @@
-name: Release Push APP
+name: Push do App em Staging
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: Release Push API
+name: Push da API em Staging
 
 on:
   push:
